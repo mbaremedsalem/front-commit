@@ -1,0 +1,21 @@
+.btn-color{
+    background-color: #5538D9;
+    color:#FFFFFF;
+}
+.document-container,
+.message-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.document-icon,
+.message-icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+.mat-iconleft{
+    margin-right: 10px;
+    font-size: 25px;
+    vertical-align:-6px;
+  }
+  

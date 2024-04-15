@@ -1,0 +1,38 @@
+<div class="container my-container">
+<div class="card-body">
+    <form class="login100-form validate-form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="compte" [ngModelOptions]="{standalone: true}" placeholder="Compte">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="client" [ngModelOptions]="{standalone: true}" placeholder="Client">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="nom" [ngModelOptions]="{standalone: true}" placeholder="Nom">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="motant_credit" [ngModelOptions]="{standalone: true}" placeholder="Montant Crédit">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="duree" [ngModelOptions]="{standalone: true}" placeholder="duree">
+        </div>
+        <div class="mb-3">
+        <input type="file" (change)="onFileSelected($event)" accept=".pdf, .doc, .docx">
+        </div>
+        <div class="mb-3 d-flex justify-content-between">
+            
+            <div class="container-login100-form-btn">
+
+            <button type="submit" class="login100-form-btn" [disabled]="loginInProgress">
+                <i class="fas fa-check"></i> &nbsp;
+                <span *ngIf="!loginInProgress">Enregistrer</span>
+                <mat-progress-spinner *ngIf="loginInProgress" class="mat-spinner-color" mode="indeterminate" style="width: 20px;height: 20px; margin:auto;">
+                </mat-progress-spinner>
+            </button>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="showErrorMessage">
+    </div> 
+</div>
+</div>

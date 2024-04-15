@@ -1,0 +1,30 @@
+<div class="daily-document">
+<div class="document-container">
+  <div class="document-icon">
+    <img src="assets/intranet.png" class="mat-iconleft" width="60px" height="90px" alt=""> 
+  </div>
+  <div class="document-details">
+    <p>ALGERIAN UNION BANQUE</p>
+    <p>البنك الاتحاد الجزاري</p>
+  </div>
+</div>
+</div>
+<div class="card" *ngFor="let menu of menuProperties">
+    <button class="btn btn-color" type="button" [attr.data-bs-toggle]="'collapse'" [attr.data-bs-target]="'#collapse' + menu.id" aria-expanded="false" [attr.aria-controls]="'collapse' + menu.id">
+      <i class="{{menu.icon}}"></i>&nbsp;
+      {{menu.titre}}
+    </button>
+  <div style="min-height: 0px;">
+    <div class="collapse" [attr.id]="'collapse' + menu.id" [attr.aria-labelledby]="'menu' + menu.id" data-parent="#appMenuAccordion">
+      <div class="card card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'text-white btn-color': sousMenu.active, '': !sousMenu.active}">
+            <a href="javascript:void(0);" (click)="navigate(sousMenu)" style="color: inherit;">
+              <i class="{{sousMenu.icon}}"></i>&nbsp;
+              {{sousMenu.titre}}
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  </div>

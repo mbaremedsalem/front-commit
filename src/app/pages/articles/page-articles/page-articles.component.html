@@ -1,0 +1,119 @@
+<div class="col">
+    <div class="row m-3">
+      <div class="col-md-8 p-0">
+        <h1>Liste des articles</h1>
+      </div>
+      <div class="col-md-4 text-right">
+        <div class="d-flex">
+          <div *ngIf="showButtons" class="p-2 flex-fill">
+            <button type="button" class="btn btn-warning">
+              <i class="fas fa-cloud-upload-alt"></i>&nbsp;
+              Remonter
+            </button>
+          </div>
+          <div *ngIf="showButtons" class="p-2 flex-fill">
+            <button type="button" class="btn btn-success">
+              <i class="fas fa-cloud-download-alt"></i>&nbsp;
+              Exporter
+            </button>
+          </div>
+          <div class="p-2 flex-fill " >
+            <button type="button" class="btn btn-primary"(click)="openAddDialog();" >
+              <i class="fas fa-plus"></i>&nbsp;
+              Nouveau
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="card row m-3" >
+        <!-- start -->
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th></th>
+              <th>File</th>
+              <th>Compte</th>
+              <th>Client</th>
+              <th>Montant Crédit</th>
+              <th>Nom</th>
+              <th>Durée</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ajoutez des lignes de données pour chaque élément -->
+
+            <tr *ngFor="let document of commites">
+              <td>
+                <input type="checkbox" [checked]="document.isSelected" (change)="toggleButtons($event)" class="select-checkbox">
+              </td>
+
+              <td>
+                <iframe [src]="document.safeUrl" width="30px" height="50px"></iframe>
+                <!-- <img src="favicon.ico" width="80px" height="80px"> -->
+              </td>
+              <td>{{ document.compte }}</td>
+              <td>{{ document.client }}</td>
+              <td>{{ document.nom }}</td>
+              <td>{{ document.motant_credit }}</td>
+              <td>{{ document.duree }}</td>
+              <td>{{ document.status }}</td>
+              <td>
+                <button type="button" class="btn btn-link">
+                  <i class="fas fa-pencil-alt"></i> Modifier
+                </button>
+                <button type="button" class="btn btn-link text-danger" (click)="openConfirmationDialog(document.id)" data-toggle="modal" [attr.data-target]="'#modalDeleteArticle'">
+                  <i class="fas fa-trash-alt"></i> Supprimer
+                </button>
+                <button type="button" class="btn btn-link">
+                  <i class="far fa-list-alt"></i> Détails
+                </button>
+              </td>
+            </tr>
+            <!-- Ajoutez d'autres lignes de données au besoin -->
+          </tbody>
+        </table>
+        
+        <!-- Modal de confirmation de suppression -->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Êtes-vous sûr de vouloir supprimer cet article ?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  <i class="fas fa-ban"></i> Annuler
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                  <i class="fas fa-trash-alt"></i> Supprimer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- end  -->
+      <!-- <app-detail-article></app-detail-article>
+      <app-detail-article></app-detail-article>
+      <app-detail-article></app-detail-article>
+      <app-detail-article></app-detail-article>
+      <app-detail-article></app-detail-article> -->
+
+    </div>
+    <div class="row mb-3" >
+      <div class=" col-md-12 text-center">
+        <app-pagination></app-pagination>
+      </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,73 @@
+<div class="main-container">
+    <div class="row min-height-600 no-flex-wrap">
+      <div class="card col-md-2 mr-2">
+        <div class="col pl-0 pr-0 ">
+          <div class="card mt-3 mb-2 border-none">
+            <h4> Commité de crédit V.20 </h4>
+          </div>
+          <div>
+            <app-menu></app-menu>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-md-10 pl-0 pr-0 background-grey border-none">
+        <div class="col pl-0 pr-0 d-flex flex-column justify-content-between">
+            <div class="card p-3 min-height-80 mb-2">
+              <app-header></app-header>
+            </div>
+            <div class="card mb-2" style="min-height: 480px;">
+              <router-outlet></router-outlet>
+            </div>
+            <div class="card min-height-80">
+              <footer>
+                <div class="container">
+                  <div class="footer-content">
+                    <div class="footer-logo">
+                      <img src="assets/intranet.png" class="rounded-image" alt="Logo de votre site" />
+                    </div>
+              
+                    <div class="footer-contact">
+                      <h4>Contactez-nous</h4>
+                      <input class="sed-mail" type="email" placeholder="Envoyez-nous un e-mail ..." />
+                    </div>
+              
+                    <div class="footer-links">
+                      <h4>Liens utiles</h4>
+                      <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                      </ul>
+                    </div>
+              
+                    <div class="footer-location">
+                      <h4>Notre emplacement</h4>
+                      <p>Votre adresse ici</p>
+                      <p>Votre ville, code postal</p>
+                    </div>
+              
+                    <div class="footer-social">
+                      <h4>Restons connectés</h4>
+                      <ul>
+                        <li><a href="#">
+                        <img src="assets/icons/facebook-logo.png" class="mat-icontop" width="30px" height="30px" alt=""> 
+                          
+                          Facebook</a></li>
+                        <li><a href="#">
+                        <img src="assets/icons/twitter.png" class="mat-icontop" width="30px" height="30px" alt=""> 
+                          Twitter</a></li>
+                        <li><a href="#">
+                        <img src="assets/icons/linkedin.png" class="mat-icontop" width="30px" height="30px" alt=""> 
+                          LinkedIn</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
