@@ -9,8 +9,24 @@ import { API_BASE } from 'src/gs-api/src/base/base-auth';
 export class CommiteService {
 
 
+  
+  private apiUrl = 'http://127.0.0.1:8000/api/generate-qr/';
+
   constructor(private http: HttpClient) { }
+
+  generateQrCode(ssid: string, password: string, encryption: string): Observable<Blob> {
+    const body = { ssid, password, encryption };
+    return this.http.post(this.apiUrl, body, { responseType: 'blob' });
+  }
+
   getCommits(): Observable<any[]> {
+    // Vous devez ajouter le jeton d'authentification ici si nécessaire
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access'));
+
+    return this.http.get<any[]>(`${API_BASE}commits/`, { headers });
+  }
+
+  getTransfer(): Observable<any[]> {
     // Vous devez ajouter le jeton d'authentification ici si nécessaire
     const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access'));
 
@@ -52,5 +68,15 @@ export class CommiteService {
         // Handle the error, display a message, etc.
       }
     );
+  }
+
+
+  remonteCommits(commiteId: number): Observable<any[]> {
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access'));
+    const body = {
+      commite_id: commiteId,
+      nouvel_utilisateur_id: localStorage.getItem('id')
+    };
+    return this.http.post<any[]>(`${API_BASE}remonter-commite/`,body, { headers });
   }
 }

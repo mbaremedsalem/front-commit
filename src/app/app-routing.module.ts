@@ -5,6 +5,7 @@ import { PageInscriptionComponent } from './pages/page-inscription/page-inscript
 import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
 import { PageStatistiqueComponent } from './pages/page-statistique/page-statistique.component';
 import { PageArticlesComponent } from './pages/articles/page-articles/page-articles.component';
+import { TransferComponent } from './pages/transfer/transfer.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path:'articles',
         component:PageArticlesComponent,
+      },
+      {
+        path:'transfer',
+        component:TransferComponent,
       },
     ]
   }

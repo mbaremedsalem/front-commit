@@ -16,17 +16,18 @@ export class MenuComponent implements OnInit {
     url: '',
     sousMenu: [
       {
+        id: '12',
+        titre: 'statistique',
+        icon: 'fas fa-chart-bar',
+        url: 'statistique'
+      },
+      {
         id: '11',
         titre: 'Commite Remonté',
         icon: 'fas fa-chart-pie',
         url: ''
-      },
-      {
-        id: '12',
-        titre: 'Historique',
-        icon: 'fas fa-chart-bar',
-        url: 'statistique'
       }
+
     ]
   },
     {
@@ -35,6 +36,12 @@ export class MenuComponent implements OnInit {
       icon: 'fas fa-boxes',
       url: '',
       sousMenu: [
+        {
+          id: '20',
+          titre: 'Trabsfére',
+          icon: 'fas fa-boxes',
+          url: 'transfer'
+        },
         {
           id: '21',
           titre: 'Crédit commitée ',

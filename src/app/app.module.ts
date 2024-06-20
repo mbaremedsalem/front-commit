@@ -22,6 +22,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCommitComponent } from './pages/add-commit/add-commit.component';
 import { ConfirmDialogComponent } from './pages/confirm-dialog/confirm-dialog.component';
+
+import { QRCodeModule } from 'angularx-qrcode';
+import { TransferComponent } from './pages/transfer/transfer.component';
+import { AddTransferComponent } from './pages/add-transfer/add-transfer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,9 @@ import { ConfirmDialogComponent } from './pages/confirm-dialog/confirm-dialog.co
     DetailArticleComponent,
     PaginationComponent,
     AddCommitComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    TransferComponent,
+    AddTransferComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,8 @@ import { ConfirmDialogComponent } from './pages/confirm-dialog/confirm-dialog.co
     FormsModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    QRCodeModule
 
   ],
   providers: [],
