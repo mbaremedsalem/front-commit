@@ -29,6 +29,7 @@ export class PageLoginComponent {
          if(response.role==='Validateur'){
  
            localStorage.setItem('access', response.access);  
+           localStorage.setItem('id', response.id.toString());  
            
            // Redirect to the home page
            this.router.navigate(['/statistique']);
@@ -37,6 +38,8 @@ export class PageLoginComponent {
          {
           // Redirect to the home manager page
           localStorage.setItem('access', response.access);
+          localStorage.setItem('id', response.id.toString());  
+          
           this.router.navigate(['/statistique']);
        }
          else 

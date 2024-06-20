@@ -3,17 +3,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CommiteService } from 'src/app/services/commite-service/commite.service';
-import { AddCommitComponent } from '../../add-commit/add-commit.component';
-import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
 import { url } from 'src/gs-api/src/base/base-auth';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { AddTransferComponent } from '../add-transfer/add-transfer.component';
 
 @Component({
-  selector: 'app-page-articles',
-  templateUrl: './page-articles.component.html',
-  styleUrls: ['./page-articles.component.scss']
+  selector: 'app-transfer',
+  templateUrl: './transfer.component.html',
+  styleUrls: ['./transfer.component.scss']
 })
-export class PageArticlesComponent {
+export class TransferComponent {
   commites: any[] = [];
   dataSource = new MatTableDataSource<any>();
   show = true;
@@ -45,7 +45,7 @@ export class PageArticlesComponent {
   }
 
   openAddDialog() {
-    const dialogRef = this.dialog.open(AddCommitComponent, {
+    const dialogRef = this.dialog.open(AddTransferComponent, {
       
       width: '1000px',
       
@@ -95,5 +95,4 @@ export class PageArticlesComponent {
       this.showButtons = false;
     }
   }
-  
 }

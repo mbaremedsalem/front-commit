@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommiteService } from 'src/app/services/commite-service/commite.service';
+import { AddCommitComponent } from '../add-commit/add-commit.component';
 
 @Component({
-  selector: 'app-add-commit',
-  templateUrl: './add-commit.component.html',
-  styleUrls: ['./add-commit.component.scss']
+  selector: 'app-add-transfer',
+  templateUrl: './add-transfer.component.html',
+  styleUrls: ['./add-transfer.component.scss']
 })
-export class AddCommitComponent {
+export class AddTransferComponent {
   selectedFile: File | null = null;
   loginInProgress = false;
   compte: string = '';

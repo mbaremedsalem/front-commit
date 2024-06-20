@@ -1,4 +1,4 @@
-<div class="container my-container">
+<!-- <div class="container my-container">
     <div class="card justify-content-md-center">
         <div class="card-header text-center">
             <h3>
@@ -55,4 +55,13 @@
         </div>
        </div>
     </div>
-</div>
+</div> -->
+<!-- page-inscription.component.html -->
+<div style="text-align:center">
+    <h1>{{ title }}</h1>
+    <button (click)="generateQrCode()">Generate QR Code</button>
+    <div *ngIf="qrCodeImageUrl">
+      <img [src]="qrCodeImageUrl" alt="QR Code">
+    </div>
+  </div>
+  
